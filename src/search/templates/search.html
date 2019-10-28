@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for obj in object_list %}
+
+    
+<img src="{{obj.image.url}}" alt="">
+<hr>
+{% endfor %}
+
+{% endblock content %}
+

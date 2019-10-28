@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1> {{object.name|title}}</h1>
+            <hr>
+            <img src="{{object.image.url}}" alt="">
+            <hr>
+            {{object.title|linebreaks}}
+        </div>
+        <!-- <img src="{{object.image.url}}" alt=""> -->
+        <!-- <h1>///////////////////////////////////////</h1>
+     {{object.createdate|date:'Y-m-d H:i'}} -->
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+<br>
+<br>
+
+<div class="card" style="width: 18rem;">
+    {% if instance.image %}
+    <img src="{{instance.image.url}}" class="card-img-top" alt="...">
+    {%endif%}
+    <div class="card-body">
+        <h5 class="card-title">{{instance.name}}</h5>
+        <p class="card-text">{{instance.title|linebreaks|truncatewords:12}}</p>
+        <a href="{{instance.get_absolute_url}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-12">
+      {% if query %}
+      Searchedfor : <b>{{query}}</b>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row py-3 no-gutters">
+    <div class="col-12 col-md-8 mx-auto">
+      <input type="text" class="form-control" placeholder="{{query}}">
+    </div>
+  </div>
+  <div class="row no-gutters">
+
+    <br>
+    {% for obj in object_list %}
+    <div class="col-4">
+
+      {{forloop.counter}}
+      {% include "snippet/card.html" with instance=obj %}
+      <!-- {% cycle '<h1>Hello</h1>' '' '' '' %} -->
+      {% if forloop.counter|divisibleby:2 %}
+      <h1>Hello</h1>
+      {% else %}
+      <h1>Bye</h1>
+      {% endif %}
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
