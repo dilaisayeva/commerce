@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import *
 from django.contrib.auth import authenticate, login
-
+from django.views.generic.edit import CreateView
+from first_app.models import Contact
+from django.urls import reverse_lazy
 
 def home_page(request):
     # name=request.POST.get('name')
@@ -16,6 +18,11 @@ def home_page(request):
         print(form.cleaned_data)
     return render(request, 'home_page.html', context)
 
+class contact_page(CreateView):
+    model=Contact
+    fields='__all__'
+    template_name='contact_page.html'
+    success_url=reverse_lazy('home')
 
 def login_page(request):
     form = LoginForm()

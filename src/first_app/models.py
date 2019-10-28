@@ -3,6 +3,16 @@ from django.http import Http404
 from django.urls import reverse_lazy,reverse
 from django.db.models import Q
  
+class Contact(models.Model):
+    name=models.CharField("Ad", max_length=20)
+    title=models.CharField("Basliq", max_length=20)
+    text=models.TextField("Movzu" )
+    email=models.EmailField("Email",max_length=20)
+
+
+    def __str__(self):
+        return f'{self.name} {self.title}'
+         
 class ProductQuerySet(models.query.QuerySet):
 
     def featured(self):

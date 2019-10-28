@@ -1,4 +1,5 @@
 {% url 'home' as home_url %}
+{% url 'contact' as contact_url %}
 {% url 'first:list' as list_url %}
 {% url 'login' as  login_url%}
 {% url 'register' as  register_url%}
@@ -21,7 +22,7 @@
                 <a class="nav-link" href="{{ home_url }}">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ home_url }}">Contact</a>
+                <a class="nav-link" href="{{ contact_url }}">Contact</a>
             </li>
             <li class="nav-item {% if request.path == list_url  %} active {% endif%} ">
                 <a class="nav-link " href="{{ list_url  }}">Products</a>

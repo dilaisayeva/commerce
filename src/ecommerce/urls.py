@@ -28,7 +28,8 @@ urlpatterns = [
     path('',include('first_app.urls',namespace='first')),
     path('boostrap/',TemplateView.as_view(template_name=('boostrap/example.html'))),
     path('',include('search.urls',namespace='search')),
-    path('cart/',include('carts.urls',namespace='cart'))
+    path('cart/',include('carts.urls',namespace='cart')),
+    path('contact/',contact_page.as_view(),name='contact')
 ]
 
 if settings.DEBUG:

@@ -4,11 +4,12 @@
 {% block content %}
 <div class="container" style="width: 40%;">
     <form action="" method="post">
-        {{form.as_p}}
+    <p>Home Page</p>
+        {% comment %} {{form.as_p}}
 
         {% csrf_token %}
         <!-- <input type="submit" value="Save" class="btn btn-default"> -->
-        <button type="submit"><img src="{% static 'images/images.jpeg' %}" alt="Click me"></button>
+        <button type="submit"><img src="{% static 'images/images.jpeg' %}" alt="Click me"></button> {% endcomment %}
 
     </form>
 </div>
